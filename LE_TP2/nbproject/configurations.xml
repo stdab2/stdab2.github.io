@@ -10,6 +10,7 @@
       <itemPath>Entraineur.h</itemPath>
       <itemPath>Joueur.h</itemPath>
       <itemPath>Personne.h</itemPath>
+      <itemPath>PersonneException.h</itemPath>
       <itemPath>Validation.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -98,6 +99,8 @@
       <item path="Personne.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Personne.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PersonneException.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Validation.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -231,6 +234,8 @@
       <item path="Personne.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Personne.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PersonneException.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Validation.cpp" ex="false" tool="1" flavor2="0">
       </item>
