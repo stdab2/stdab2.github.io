@@ -7,6 +7,7 @@
 
 #include "Annuaire.h"
 #include "Validation.h"
+#include "PersonneException.h"
 #include <string>
 #include <vector>
 #include <sstream>
@@ -62,7 +63,21 @@ return *this;
 
 void Annuaire::ajouterPersonne (const Personne& p_personne)
 {
-  m_membres.push_back(p_personne.clone());
+  try
+    {
+      if (PersonneEstDejaPresente (p_personne))
+        {
+          throw PersonneDejaPresenteException("Impossible d’ajouter cette personne, elle est deja presente dans la liste");
+        }
+      m_membres.push_back(p_personne.clone());
+    }
+  
+  catch (PersonneDejaPresenteException& e)
+    {
+      ostringstream os;
+      os<< "Message : " << e.what ();
+      os.str ();
+    }
 }
 
 
@@ -138,6 +153,8 @@ void Annuaire::supprimerPersonne (const std::string& p_nom, const std::string& p
           m_membres.erase(it);
         }
     }
+  
+  INVARIANTS ();
 }
 
 
