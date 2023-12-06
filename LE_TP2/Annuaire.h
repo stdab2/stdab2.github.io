@@ -31,6 +31,9 @@ public:
   void ajouterPersonne (const hockey::Personne& p_personne);
   std::string reqAnnuaireFormate() const;
   size_t reqNbMembres () const;
+  bool PersonneEstDejaPresente(const Personne& p_personne) const;
+  void supprimerPersonne (const std::string& p_nom, const std::string& p_prenom, const
+                          util::Date& p_dateDeNaissance);
 
   
   

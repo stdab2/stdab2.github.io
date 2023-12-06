@@ -105,6 +105,42 @@ size_t Annuaire::reqNbMembres () const
 }
 
 
+bool Annuaire::PersonneEstDejaPresente(const Personne& p_personne) const
+{
+  bool personnePresente = false;
+  
+  //vector<Personne *>::const_iterator it;
+  vector<unique_ptr<Personne>>::const_iterator it;
+	
+  for(it = m_membres.begin (); it != m_membres.end (); it++)
+    {
+      if ((*it)->reqPersonneFormate () == p_personne.reqPersonneFormate ())
+        {
+          personnePresente = true;
+        }
+    }
+  return personnePresente;
+}
+
+
+void Annuaire::supprimerPersonne (const std::string& p_nom, const std::string& p_prenom, const
+                          util::Date& p_dateDeNaissance)
+{
+  PRECONDITION (util::validerFormatNom (p_nom));
+  PRECONDITION (util::validerFormatNom (p_prenom));
+  //vector<Personne *>::const_iterator it;
+  vector<unique_ptr<Personne>>::const_iterator it;
+	
+  for(it = m_membres.begin (); it != m_membres.end (); it++)
+    {
+      if ((*it)->reqNom () == p_nom && (*it)->reqPrenom () == p_prenom && (*it)->reqDateNaissance () == p_dateDeNaissance)
+        {
+          m_membres.erase(it);
+        }
+    }
+}
+
+
 /**
    * \brief Teste l'invariant de la classe Annuaire. L'invariant de cette classe s'assure que les informations de l'annuaire sont valides
    */
