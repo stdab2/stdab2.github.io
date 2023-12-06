@@ -25,9 +25,9 @@ public:
 	PersonneDejaPresenteException(const std::string& p_raison): PersonneException(p_raison){}
 };
 
-class PersonneNonPresenteException: public PersonneException{
+class PersonneAbscenteException: public PersonneException{
 public:
-	PersonneNonPresenteException(const std::string& p_raison): PersonneException(p_raison){}
+	PersonneAbscenteException(const std::string& p_raison): PersonneException(p_raison){}
 };
 
 #endif /* PERSONNEEXCEPTION_H */

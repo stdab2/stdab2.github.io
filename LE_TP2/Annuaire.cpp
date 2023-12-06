@@ -143,15 +143,35 @@ void Annuaire::supprimerPersonne (const std::string& p_nom, const std::string& p
 {
   PRECONDITION (util::validerFormatNom (p_nom));
   PRECONDITION (util::validerFormatNom (p_prenom));
+  bool personnePresente = false;
   //vector<Personne *>::const_iterator it;
   vector<unique_ptr<Personne>>::const_iterator it;
-	
-  for(it = m_membres.begin (); it != m_membres.end (); it++)
+  
+  try
     {
-      if ((*it)->reqNom () == p_nom && (*it)->reqPrenom () == p_prenom && (*it)->reqDateNaissance () == p_dateDeNaissance)
+      while (!personnePresente && it != m_membres.end())
+        {
+          if ((*it)->reqNom () == p_nom && (*it)->reqPrenom () == p_prenom && (*it)->reqDateNaissance () == p_dateDeNaissance)
+            {
+              personnePresente = true;
+            }
+          
+          else
+            {
+              it++;
+            }
+        }
+      if (personnePresente == true)
         {
           m_membres.erase(it);
         }
+    }  
+  
+  catch (PersonneAbscenteException& e)
+    {
+      ostringstream os;
+      os<< "Message : " << e.what ();
+      os.str ();
     }
   
   INVARIANTS ();
