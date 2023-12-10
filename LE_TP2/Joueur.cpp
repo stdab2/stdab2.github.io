@@ -85,7 +85,7 @@ namespace hockey
     os << "Date de naissance" << "       : " << Personne::reqDateNaissance ().reqDateFormatee () << endl;
     os << "Telephone" << "               : " << Personne::reqNumeroTelephone () << endl;
     os << "Position" << "                : " << m_position << endl;
-    os << "---------------------/n" << endl;
+    os << "---------------------" << endl;
     
     return os.str ();
   }

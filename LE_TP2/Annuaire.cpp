@@ -145,25 +145,27 @@ void Annuaire::supprimerPersonne (const std::string& p_nom, const std::string& p
   PRECONDITION (util::validerFormatNom (p_prenom));
   bool personnePresente = false;
   //vector<Personne *>::const_iterator it;
-  vector<unique_ptr<Personne>>::const_iterator it;
+  vector<unique_ptr<Personne>>::iterator it = m_membres.begin();
   
   try
     {
-      while (!personnePresente && it != m_membres.end())
+      while (it != m_membres.end())
         {
           if ((*it)->reqNom () == p_nom && (*it)->reqPrenom () == p_prenom && (*it)->reqDateNaissance () == p_dateDeNaissance)
             {
               personnePresente = true;
+              it = m_membres.erase(it);
+              break;
             }
           
           else
             {
-              it++;
+              ++it;
             }
         }
-      if (personnePresente == true)
+      if (personnePresente == false)
         {
-          m_membres.erase(it);
+          throw PersonneAbscenteException("Impossible de retirer cette personne, elle n'est pas dans la liste");
         }
     }  
   

@@ -150,9 +150,11 @@ void PersonneGUI::dialogSupprimerPersonne ()
            {
 	     throw PersonneAbscenteException("Impossible de retirer cette personne, elle n'est pas dans la liste");
            }
-         
-         monAnnuaire.supprimerPersonne (supp.reqNom ().toStdString (), supp.reqPrenom ().toStdString (), supp.reqDateNaissance ());
-         ui.affichage->setText(monAnnuaire.reqAnnuaireFormate ().c_str());
+         else
+           {
+             monAnnuaire.supprimerPersonne (supp.reqNom ().toStdString (), supp.reqPrenom ().toStdString (), supp.reqDateNaissance ());
+             ui.affichage->setText(monAnnuaire.reqAnnuaireFormate ().c_str());
+           }
        } 
     
      catch (PersonneAbscenteException& e)
