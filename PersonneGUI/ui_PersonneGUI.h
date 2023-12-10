@@ -16,6 +16,7 @@
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -28,6 +29,7 @@ public:
     QAction *actionEntraineur;
     QAction *actionJoueur;
     QWidget *centralwidget;
+    QTextEdit *affichage;
     QMenuBar *menubar;
     QMenu *menuMenu;
     QMenu *menuAjouter_une_Personne;
@@ -48,6 +50,9 @@ public:
         actionJoueur->setObjectName(QString::fromUtf8("actionJoueur"));
         centralwidget = new QWidget(PersonneGUI);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
+        affichage = new QTextEdit(centralwidget);
+        affichage->setObjectName(QString::fromUtf8("affichage"));
+        affichage->setGeometry(QRect(13, 14, 511, 481));
         PersonneGUI->setCentralWidget(centralwidget);
         menubar = new QMenuBar(PersonneGUI);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -70,6 +75,7 @@ public:
 
         retranslateUi(PersonneGUI);
         QObject::connect(actionQuitter, SIGNAL(triggered()), PersonneGUI, SLOT(close()));
+        QObject::connect(actionEntraineur, SIGNAL(triggered()), PersonneGUI, SLOT(dialogEntraineur()));
 
         QMetaObject::connectSlotsByName(PersonneGUI);
     } // setupUi

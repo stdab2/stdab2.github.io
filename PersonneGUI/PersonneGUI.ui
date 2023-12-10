@@ -13,7 +13,18 @@
   <property name="windowTitle">
    <string>PersonneGUI</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTextEdit" name="affichage">
+    <property name="geometry">
+     <rect>
+      <x>13</x>
+      <y>14</y>
+      <width>511</width>
+      <height>481</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
@@ -80,5 +91,24 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>actionEntraineur</sender>
+   <signal>triggered()</signal>
+   <receiver>PersonneGUI</receiver>
+   <slot>dialogEntraineur()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>264</x>
+     <y>265</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
+ <slots>
+  <slot>dialogEntraineur()</slot>
+ </slots>
 </ui>

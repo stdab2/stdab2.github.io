@@ -22,8 +22,12 @@ class PersonneGUI : public QMainWindow
 public:
   PersonneGUI (hockey::Annuaire& annuaire);
   virtual ~PersonneGUI ();
+  
+  private slots:
+    void dialogEntraineur ();
+    
 private:
-  Ui::PersonneGUI widget;
+  Ui::PersonneGUI ui;
   hockey::Annuaire monAnnuaire;
   
 };

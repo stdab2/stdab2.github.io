@@ -52,10 +52,14 @@ OBJECTS_DIR   = build/Debug/GNU-Linux/
 
 ####### Files
 
-SOURCES       = PersonneGUI.cpp \
-		main.cpp moc_PersonneGUI.cpp
-OBJECTS       = build/Debug/GNU-Linux/PersonneGUI.o \
+SOURCES       = AjouterEntraineur.cpp \
+		PersonneGUI.cpp \
+		main.cpp moc_AjouterEntraineur.cpp \
+		moc_PersonneGUI.cpp
+OBJECTS       = build/Debug/GNU-Linux/AjouterEntraineur.o \
+		build/Debug/GNU-Linux/PersonneGUI.o \
 		build/Debug/GNU-Linux/main.o \
+		build/Debug/GNU-Linux/moc_AjouterEntraineur.o \
 		build/Debug/GNU-Linux/moc_PersonneGUI.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -114,6 +118,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
+		nbproject/.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
@@ -133,7 +138,9 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exceptions.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
-		nbproject/nbproject/qt-Debug.pro PersonneGUI.h PersonneGUI.cpp \
+		nbproject/nbproject/qt-Debug.pro AjouterEntraineur.h \
+		PersonneGUI.h AjouterEntraineur.cpp \
+		PersonneGUI.cpp \
 		main.cpp
 QMAKE_TARGET  = PersonneGUI
 DESTDIR       = dist/Debug/GNU-Linux/
@@ -143,7 +150,7 @@ TARGET        = dist/Debug/GNU-Linux/PersonneGUI
 first: all
 ####### Build rules
 
-dist/Debug/GNU-Linux/PersonneGUI: ui_PersonneGUI.h $(OBJECTS)  
+dist/Debug/GNU-Linux/PersonneGUI: ui_AjouterEntraineur.h ui_PersonneGUI.h $(OBJECTS)  
 	@test -d dist/Debug/GNU-Linux/ || mkdir -p dist/Debug/GNU-Linux/
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -204,6 +211,7 @@ qttmp-Debug.mk: nbproject/qt-Debug.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/lin
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
@@ -282,6 +290,7 @@ qttmp-Debug.mk: nbproject/qt-Debug.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/lin
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf:
@@ -317,9 +326,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents PersonneGUI.h $(DISTDIR)/
-	$(COPY_FILE) --parents PersonneGUI.cpp main.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents PersonneGUI.ui $(DISTDIR)/
+	$(COPY_FILE) --parents AjouterEntraineur.h PersonneGUI.h $(DISTDIR)/
+	$(COPY_FILE) --parents AjouterEntraineur.cpp PersonneGUI.cpp main.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents AjouterEntraineur.ui PersonneGUI.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -351,9 +360,17 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -Wall -Wextra -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_PersonneGUI.cpp
+compiler_moc_header_make_all: moc_AjouterEntraineur.cpp moc_PersonneGUI.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_PersonneGUI.cpp
+	-$(DEL_FILE) moc_AjouterEntraineur.cpp moc_PersonneGUI.cpp
+moc_AjouterEntraineur.cpp: AjouterEntraineur.h \
+		ui_AjouterEntraineur.h \
+		../LE_TP2/Date.h \
+		../LE_TP2/ContratException.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/etudiant/Desktop/537035074_laboratoirec/PersonneGUI/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/etudiant/Desktop/537035074_laboratoirec/PersonneGUI/nbproject -I/home/etudiant/Desktop/537035074_laboratoirec/PersonneGUI/LE_TP2 -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include AjouterEntraineur.h -o moc_AjouterEntraineur.cpp
+
 moc_PersonneGUI.cpp: PersonneGUI.h \
 		ui_PersonneGUI.h \
 		../LE_TP2/Annuaire.h \
@@ -368,9 +385,13 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_PersonneGUI.h
+compiler_uic_make_all: ui_AjouterEntraineur.h ui_PersonneGUI.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_PersonneGUI.h
+	-$(DEL_FILE) ui_AjouterEntraineur.h ui_PersonneGUI.h
+ui_AjouterEntraineur.h: AjouterEntraineur.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic AjouterEntraineur.ui -o ui_AjouterEntraineur.h
+
 ui_PersonneGUI.h: PersonneGUI.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic PersonneGUI.ui -o ui_PersonneGUI.h
@@ -385,12 +406,21 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 ####### Compile
 
+build/Debug/GNU-Linux/AjouterEntraineur.o: AjouterEntraineur.cpp AjouterEntraineur.h \
+		ui_AjouterEntraineur.h \
+		../LE_TP2/Date.h \
+		../LE_TP2/ContratException.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/AjouterEntraineur.o AjouterEntraineur.cpp
+
 build/Debug/GNU-Linux/PersonneGUI.o: PersonneGUI.cpp PersonneGUI.h \
 		ui_PersonneGUI.h \
 		../LE_TP2/Annuaire.h \
 		../LE_TP2/Personne.h \
 		../LE_TP2/Date.h \
-		../LE_TP2/ContratException.h
+		../LE_TP2/ContratException.h \
+		AjouterEntraineur.h \
+		ui_AjouterEntraineur.h \
+		../LE_TP2/Entraineur.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/PersonneGUI.o PersonneGUI.cpp
 
 build/Debug/GNU-Linux/main.o: main.cpp PersonneGUI.h \
@@ -400,6 +430,9 @@ build/Debug/GNU-Linux/main.o: main.cpp PersonneGUI.h \
 		../LE_TP2/Date.h \
 		../LE_TP2/ContratException.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/main.o main.cpp
+
+build/Debug/GNU-Linux/moc_AjouterEntraineur.o: moc_AjouterEntraineur.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/moc_AjouterEntraineur.o moc_AjouterEntraineur.cpp
 
 build/Debug/GNU-Linux/moc_PersonneGUI.o: moc_PersonneGUI.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/moc_PersonneGUI.o moc_PersonneGUI.cpp

@@ -4,16 +4,19 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>AjouterEntraineur.h</itemPath>
       <itemPath>PersonneGUI.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
+      <itemPath>AjouterEntraineur.ui</itemPath>
       <itemPath>PersonneGUI.ui</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>AjouterEntraineur.cpp</itemPath>
       <itemPath>PersonneGUI.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
@@ -63,6 +66,12 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="AjouterEntraineur.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="AjouterEntraineur.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="AjouterEntraineur.ui" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="PersonneGUI.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="PersonneGUI.h" ex="false" tool="3" flavor2="0">
@@ -96,6 +105,12 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="AjouterEntraineur.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="AjouterEntraineur.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="AjouterEntraineur.ui" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="PersonneGUI.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="PersonneGUI.h" ex="false" tool="3" flavor2="0">
