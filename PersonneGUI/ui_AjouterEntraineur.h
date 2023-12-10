@@ -40,7 +40,7 @@ public:
     {
         if (AjouterEntraineur->objectName().isEmpty())
             AjouterEntraineur->setObjectName(QString::fromUtf8("AjouterEntraineur"));
-        AjouterEntraineur->resize(575, 603);
+        AjouterEntraineur->resize(766, 603);
         label = new QLabel(AjouterEntraineur);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(20, 20, 58, 16));
@@ -58,7 +58,7 @@ public:
         label_3->setGeometry(QRect(20, 130, 121, 16));
         dateN = new QCalendarWidget(AjouterEntraineur);
         dateN->setObjectName(QString::fromUtf8("dateN"));
-        dateN->setGeometry(QRect(140, 120, 431, 194));
+        dateN->setGeometry(QRect(210, 130, 431, 194));
         label_4 = new QLabel(AjouterEntraineur);
         label_4->setObjectName(QString::fromUtf8("label_4"));
         label_4->setGeometry(QRect(20, 340, 81, 16));
@@ -79,7 +79,7 @@ public:
         Sexe->setGeometry(QRect(210, 460, 291, 21));
         ok = new QPushButton(AjouterEntraineur);
         ok->setObjectName(QString::fromUtf8("ok"));
-        ok->setGeometry(QRect(210, 560, 90, 28));
+        ok->setGeometry(QRect(230, 560, 90, 28));
 
         retranslateUi(AjouterEntraineur);
         QObject::connect(ok, SIGNAL(clicked()), AjouterEntraineur, SLOT(valideEnregistrement()));

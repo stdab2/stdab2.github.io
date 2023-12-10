@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>AjouterEntraineur</class>
- <widget class="QDialog" name="AjouterEntraineur">
+ <class>AjouterJoueur</class>
+ <widget class="QDialog" name="AjouterJoueur">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>766</width>
-    <height>603</height>
+    <width>748</width>
+    <height>554</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>AjouterEntraineur</string>
+   <string>AjouterJoueur</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>10</x>
      <y>20</y>
      <width>58</width>
      <height>16</height>
@@ -26,21 +26,21 @@
     <string>Nom :</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="Nom">
+  <widget class="QLineEdit" name="nom">
    <property name="geometry">
     <rect>
      <x>210</x>
-     <y>20</y>
-     <width>291</width>
-     <height>21</height>
+     <y>18</y>
+     <width>281</width>
+     <height>20</height>
     </rect>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>70</y>
+     <x>10</x>
+     <y>80</y>
      <width>58</width>
      <height>16</height>
     </rect>
@@ -49,12 +49,12 @@
     <string>Prenom :</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="Prenom">
+  <widget class="QLineEdit" name="prenom">
    <property name="geometry">
     <rect>
      <x>210</x>
-     <y>70</y>
-     <width>291</width>
+     <y>80</y>
+     <width>281</width>
      <height>21</height>
     </rect>
    </property>
@@ -62,9 +62,9 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>130</y>
-     <width>121</width>
+     <x>10</x>
+     <y>170</y>
+     <width>161</width>
      <height>16</height>
     </rect>
    </property>
@@ -72,12 +72,12 @@
     <string>Date de naissance :</string>
    </property>
   </widget>
-  <widget class="QCalendarWidget" name="dateN">
+  <widget class="QCalendarWidget" name="date">
    <property name="geometry">
     <rect>
      <x>210</x>
-     <y>130</y>
-     <width>431</width>
+     <y>160</y>
+     <width>432</width>
      <height>194</height>
     </rect>
    </property>
@@ -85,9 +85,9 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>340</y>
-     <width>81</width>
+     <x>10</x>
+     <y>400</y>
+     <width>91</width>
      <height>16</height>
     </rect>
    </property>
@@ -95,12 +95,12 @@
     <string>Telephone :</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="Telephone">
+  <widget class="QLineEdit" name="telephone">
    <property name="geometry">
     <rect>
      <x>210</x>
-     <y>340</y>
-     <width>291</width>
+     <y>397</y>
+     <width>281</width>
      <height>21</height>
     </rect>
    </property>
@@ -108,45 +108,22 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>400</y>
-     <width>58</width>
+     <x>10</x>
+     <y>470</y>
+     <width>71</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>RAMQ :</string>
+    <string>Position :</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="RAMQ">
+  <widget class="QLineEdit" name="position">
    <property name="geometry">
     <rect>
      <x>210</x>
-     <y>400</y>
-     <width>291</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_6">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>460</y>
-     <width>58</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Sexe :</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="Sexe">
-   <property name="geometry">
-    <rect>
-     <x>210</x>
-     <y>460</y>
-     <width>291</width>
+     <y>470</y>
+     <width>281</width>
      <height>21</height>
     </rect>
    </property>
@@ -154,14 +131,14 @@
   <widget class="QPushButton" name="ok">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>560</y>
+     <x>300</x>
+     <y>510</y>
      <width>90</width>
      <height>28</height>
     </rect>
    </property>
    <property name="text">
-    <string>OK</string>
+    <string>ok</string>
    </property>
   </widget>
  </widget>
@@ -170,16 +147,16 @@
   <connection>
    <sender>ok</sender>
    <signal>clicked()</signal>
-   <receiver>AjouterEntraineur</receiver>
+   <receiver>AjouterJoueur</receiver>
    <slot>valideEnregistrement()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>254</x>
-     <y>573</y>
+     <x>344</x>
+     <y>523</y>
     </hint>
     <hint type="destinationlabel">
-     <x>287</x>
-     <y>301</y>
+     <x>373</x>
+     <y>276</y>
     </hint>
    </hints>
   </connection>

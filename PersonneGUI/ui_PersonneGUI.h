@@ -39,7 +39,7 @@ public:
     {
         if (PersonneGUI->objectName().isEmpty())
             PersonneGUI->setObjectName(QString::fromUtf8("PersonneGUI"));
-        PersonneGUI->resize(529, 532);
+        PersonneGUI->resize(763, 661);
         actionSupprimer_une_Personne = new QAction(PersonneGUI);
         actionSupprimer_une_Personne->setObjectName(QString::fromUtf8("actionSupprimer_une_Personne"));
         actionQuitter = new QAction(PersonneGUI);
@@ -52,11 +52,11 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         affichage = new QTextEdit(centralwidget);
         affichage->setObjectName(QString::fromUtf8("affichage"));
-        affichage->setGeometry(QRect(13, 14, 511, 481));
+        affichage->setGeometry(QRect(13, 14, 741, 601));
         PersonneGUI->setCentralWidget(centralwidget);
         menubar = new QMenuBar(PersonneGUI);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 529, 22));
+        menubar->setGeometry(QRect(0, 0, 763, 22));
         menuMenu = new QMenu(menubar);
         menuMenu->setObjectName(QString::fromUtf8("menuMenu"));
         menuAjouter_une_Personne = new QMenu(menuMenu);
@@ -76,6 +76,7 @@ public:
         retranslateUi(PersonneGUI);
         QObject::connect(actionQuitter, SIGNAL(triggered()), PersonneGUI, SLOT(close()));
         QObject::connect(actionEntraineur, SIGNAL(triggered()), PersonneGUI, SLOT(dialogEntraineur()));
+        QObject::connect(actionJoueur, SIGNAL(triggered()), PersonneGUI, SLOT(dialogEntraineur()));
 
         QMetaObject::connectSlotsByName(PersonneGUI);
     } // setupUi

@@ -14,6 +14,7 @@
 #include "AjouterEntraineur.h"
 #include <string>
 #include "Entraineur.h"
+#include "AjouterJoueur.h"
 
 PersonneGUI::PersonneGUI (hockey::Annuaire& annuaire) : monAnnuaire(annuaire)
 {
@@ -53,5 +54,15 @@ void PersonneGUI::dialogEntraineur ()
 
     monAnnuaire.ajouterPersonne(nouvellePersonne);
     ui.affichage->setText(monAnnuaire.reqAnnuaireFormate ().c_str());
+    }
+}
+
+
+void PersonneGUI::dialogJoueur ()
+{
+  AjouterJoueur unJoueur;
+  
+  if (unJoueur.exec ())
+    {
     }
 }

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>529</width>
-    <height>532</height>
+    <width>763</width>
+    <height>661</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
      <rect>
       <x>13</x>
       <y>14</y>
-      <width>511</width>
-      <height>481</height>
+      <width>741</width>
+      <height>601</height>
      </rect>
     </property>
    </widget>
@@ -30,7 +30,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>529</width>
+     <width>763</width>
      <height>22</height>
     </rect>
    </property>
@@ -93,6 +93,22 @@
   </connection>
   <connection>
    <sender>actionEntraineur</sender>
+   <signal>triggered()</signal>
+   <receiver>PersonneGUI</receiver>
+   <slot>dialogEntraineur()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>264</x>
+     <y>265</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionJoueur</sender>
    <signal>triggered()</signal>
    <receiver>PersonneGUI</receiver>
    <slot>dialogEntraineur()</slot>
