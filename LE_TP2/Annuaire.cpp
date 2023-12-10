@@ -129,7 +129,7 @@ bool Annuaire::PersonneEstDejaPresente(const Personne& p_personne) const
 	
   for(it = m_membres.begin (); it != m_membres.end (); it++)
     {
-      if ((*it)->reqPersonneFormate () == p_personne.reqPersonneFormate ())
+      if ((*it)->reqNom () == p_personne.reqNom () && (*it)->reqPrenom () == p_personne.reqPrenom () && (*it)->reqDateNaissance () == p_personne.reqDateNaissance ())
         {
           personnePresente = true;
         }

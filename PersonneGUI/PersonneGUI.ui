@@ -111,7 +111,7 @@
    <sender>actionJoueur</sender>
    <signal>triggered()</signal>
    <receiver>PersonneGUI</receiver>
-   <slot>dialogEntraineur()</slot>
+   <slot>dialogJoueur()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>-1</x>
@@ -123,8 +123,26 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>actionSupprimer_une_Personne</sender>
+   <signal>triggered()</signal>
+   <receiver>PersonneGUI</receiver>
+   <slot>dialogSupprimerPersonne()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>381</x>
+     <y>330</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>dialogEntraineur()</slot>
+  <slot>dialogJoueur()</slot>
+  <slot>dialogSupprimerPersonne()</slot>
  </slots>
 </ui>

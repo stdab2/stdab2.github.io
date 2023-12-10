@@ -26,6 +26,7 @@ public:
   private slots:
     void dialogEntraineur ();
     void dialogJoueur ();
+    void dialogSupprimerPersonne ();
     
 private:
   Ui::PersonneGUI ui;

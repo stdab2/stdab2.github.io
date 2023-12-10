@@ -7,6 +7,7 @@
       <itemPath>AjouterEntraineur.h</itemPath>
       <itemPath>AjouterJoueur.h</itemPath>
       <itemPath>PersonneGUI.h</itemPath>
+      <itemPath>SupprimerPersonneGUI.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -14,6 +15,7 @@
       <itemPath>AjouterEntraineur.ui</itemPath>
       <itemPath>AjouterJoueur.ui</itemPath>
       <itemPath>PersonneGUI.ui</itemPath>
+      <itemPath>SupprimerPersonneGUI.ui</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -21,6 +23,7 @@
       <itemPath>AjouterEntraineur.cpp</itemPath>
       <itemPath>AjouterJoueur.cpp</itemPath>
       <itemPath>PersonneGUI.cpp</itemPath>
+      <itemPath>SupprimerPersonneGUI.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -87,6 +90,12 @@
       </item>
       <item path="PersonneGUI.ui" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="SupprimerPersonneGUI.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SupprimerPersonneGUI.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SupprimerPersonneGUI.ui" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
@@ -131,6 +140,12 @@
       <item path="PersonneGUI.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="PersonneGUI.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SupprimerPersonneGUI.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SupprimerPersonneGUI.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SupprimerPersonneGUI.ui" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

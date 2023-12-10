@@ -1,42 +1,38 @@
 /*
- * File:   AjouterJoueur.cpp
- * Author: etudiant
- *
- * Created on 9 décembre 2023, 23 h 01
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/qtFiles/form.cc to edit this template
  */
 
-#include "AjouterJoueur.h"
+/*
+ * File:   SupprimerPersonneGUI.cpp
+ * Author: etudiant
+ *
+ * Created on 10 décembre 2023, 01 h 37
+ */
+
+#include "SupprimerPersonneGUI.h"
 #include <QMessageBox>
 
-AjouterJoueur::AjouterJoueur ()
+SupprimerPersonneGUI::SupprimerPersonneGUI ()
 {
   ui.setupUi (this);
 }
 
-AjouterJoueur::~AjouterJoueur () { }
+SupprimerPersonneGUI::~SupprimerPersonneGUI () { }
 
-
-QString AjouterJoueur::reqNom() const{
+QString SupprimerPersonneGUI::reqNom() const{
 	return ui.nom->text();
 }
 
-QString AjouterJoueur::reqPrenom() const{
+QString SupprimerPersonneGUI::reqPrenom() const{
 	return ui.prenom->text();
 }
 
-util::Date AjouterJoueur::reqDateNaissance() const{
+util::Date SupprimerPersonneGUI::reqDateNaissance() const{
 	return m_dateNaissance;
 }
 
-QString AjouterJoueur::reqTelephone () const{
-	return ui.telephone->text();
-}
-
-QString AjouterJoueur::reqPosition () const{
-	return ui.position->text();
-}
-
-void AjouterJoueur::valideEnregistrement()
+void SupprimerPersonneGUI::valideEnregistrement()
 {
   if (ui.nom->text().isEmpty()){
 		QString message("Le nom ne doit pas etre vide");
@@ -45,18 +41,6 @@ void AjouterJoueur::valideEnregistrement()
 	}
   if (ui.prenom->text().isEmpty()){
 		QString message("Le prenom ne doit pas etre vide");
-		QMessageBox::information(this, "ERREUR", message);
-		return;
-	}
-  
-  if (ui.telephone->text().isEmpty()){
-		QString message("Le numero de telephone ne doit pas etre vide");
-		QMessageBox::information(this, "ERREUR", message);
-		return;
-	}
-  
-  if (ui.position->text().isEmpty()){
-		QString message("La position ne doit pas etre vide");
 		QMessageBox::information(this, "ERREUR", message);
 		return;
 	}

@@ -76,7 +76,8 @@ public:
         retranslateUi(PersonneGUI);
         QObject::connect(actionQuitter, SIGNAL(triggered()), PersonneGUI, SLOT(close()));
         QObject::connect(actionEntraineur, SIGNAL(triggered()), PersonneGUI, SLOT(dialogEntraineur()));
-        QObject::connect(actionJoueur, SIGNAL(triggered()), PersonneGUI, SLOT(dialogEntraineur()));
+        QObject::connect(actionJoueur, SIGNAL(triggered()), PersonneGUI, SLOT(dialogJoueur()));
+        QObject::connect(actionSupprimer_une_Personne, SIGNAL(triggered()), PersonneGUI, SLOT(dialogSupprimerPersonne()));
 
         QMetaObject::connectSlotsByName(PersonneGUI);
     } // setupUi
