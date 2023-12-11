@@ -27,6 +27,7 @@ public:
     void dialogEntraineur ();
     void dialogJoueur ();
     void dialogSupprimerPersonne ();
+    void selectionLigneTable();
     
 private:
   Ui::PersonneGUI ui;

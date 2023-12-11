@@ -190,6 +190,20 @@ void Annuaire::verifieInvariant () const
 }
 
 
+Personne& Annuaire::reqPersonne(int index) const 
+{
+        if (index >= 0 && index < m_membres.size()) 
+        {
+          return *(m_membres[index]);
+        } 
+        
+        else 
+        {
+          throw std::out_of_range("Index hors limites");
+        }
+}
+
+
 } // namespace hockey
 
 

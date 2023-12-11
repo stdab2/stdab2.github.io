@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>763</width>
+    <width>936</width>
     <height>661</height>
    </rect>
   </property>
@@ -17,12 +17,37 @@
    <widget class="QTextEdit" name="affichage">
     <property name="geometry">
      <rect>
-      <x>13</x>
+      <x>473</x>
       <y>14</y>
-      <width>741</width>
-      <height>601</height>
+      <width>461</width>
+      <height>591</height>
      </rect>
     </property>
+   </widget>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>20</y>
+      <width>461</width>
+      <height>581</height>
+     </rect>
+    </property>
+    <column>
+     <property name="text">
+      <string>Nom</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Prenom</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Date de naissance</string>
+     </property>
+    </column>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -30,7 +55,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>763</width>
+     <width>936</width>
      <height>22</height>
     </rect>
    </property>
@@ -139,10 +164,27 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>tableWidget</sender>
+   <signal>cellClicked(int,int)</signal>
+   <receiver>PersonneGUI</receiver>
+   <slot>selectionLigneTable()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>230</x>
+     <y>332</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>381</x>
+     <y>330</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>dialogEntraineur()</slot>
   <slot>dialogJoueur()</slot>
   <slot>dialogSupprimerPersonne()</slot>
+  <slot>selectionLigneTable()</slot>
  </slots>
 </ui>

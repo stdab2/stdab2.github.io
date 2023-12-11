@@ -14,15 +14,20 @@
 #include "AjouterEntraineur.h"
 #include <string>
 #include "Entraineur.h"
+#include "Personne.h"
 #include "AjouterJoueur.h"
 #include "Joueur.h"
 #include "PersonneException.h"
 #include <QMessageBox>
 #include "SupprimerPersonneGUI.h"
+#include <vector>
 
 PersonneGUI::PersonneGUI (hockey::Annuaire& annuaire) : monAnnuaire(annuaire)
 {
   ui.setupUi (this);
+  ui.tableWidget->setColumnWidth(0, 140);
+  ui.tableWidget->setColumnWidth(1, 140);
+  ui.tableWidget->setColumnWidth(2, 180);
 }
 
 
@@ -66,6 +71,13 @@ void PersonneGUI::dialogEntraineur ()
           
          monAnnuaire.ajouterPersonne(nouvellePersonne);
          ui.affichage->setText(monAnnuaire.reqAnnuaireFormate ().c_str());
+         
+         int nombreDeLigne = ui.tableWidget->rowCount();
+		QString date = QString::fromStdString(nouvellePersonne.reqDateNaissance ().reqDateFormatee ());
+		ui.tableWidget->setRowCount(nombreDeLigne + 1);
+		ui.tableWidget->setItem(nombreDeLigne, 0, new QTableWidgetItem(QString::fromStdString(nouvellePersonne.reqNom ())));
+		ui.tableWidget->setItem(nombreDeLigne, 1, new QTableWidgetItem(QString::fromStdString(nouvellePersonne.reqPrenom ())));
+		ui.tableWidget->setItem(nombreDeLigne, 2, new QTableWidgetItem(date));
        } 
     
     catch (PersonneDejaPresenteException& e)
@@ -118,6 +130,13 @@ void PersonneGUI::dialogJoueur ()
           
          monAnnuaire.ajouterPersonne(nouvellePersonne);
          ui.affichage->setText(monAnnuaire.reqAnnuaireFormate ().c_str());
+         
+         int nombreDeLigne = ui.tableWidget->rowCount();
+		QString date = QString::fromStdString(nouvellePersonne.reqDateNaissance ().reqDateFormatee ());
+		ui.tableWidget->setRowCount(nombreDeLigne + 1);
+		ui.tableWidget->setItem(nombreDeLigne, 0, new QTableWidgetItem(QString::fromStdString(nouvellePersonne.reqNom ())));
+		ui.tableWidget->setItem(nombreDeLigne, 1, new QTableWidgetItem(QString::fromStdString(nouvellePersonne.reqPrenom ())));
+		ui.tableWidget->setItem(nombreDeLigne, 2, new QTableWidgetItem(date));
        } 
     
     catch (PersonneDejaPresenteException& e)
@@ -154,6 +173,18 @@ void PersonneGUI::dialogSupprimerPersonne ()
            {
              monAnnuaire.supprimerPersonne (supp.reqNom ().toStdString (), supp.reqPrenom ().toStdString (), supp.reqDateNaissance ());
              ui.affichage->setText(monAnnuaire.reqAnnuaireFormate ().c_str());
+             for (int row = 0; row < ui.tableWidget->rowCount(); ++row) 
+             {
+               QTableWidgetItem* itemNom = ui.tableWidget->item(row, 0);
+               QTableWidgetItem* itemPrenom = ui.tableWidget->item(row, 1);
+               if (itemNom && itemPrenom &&
+               itemNom->text().toStdString() == nouvellePersonne.reqNom () &&
+               itemPrenom->text().toStdString() == nouvellePersonne.reqPrenom ()) 
+               {
+                 ui.tableWidget->removeRow(row);
+                 break;
+               }
+             }
            }
        } 
     
@@ -163,4 +194,20 @@ void PersonneGUI::dialogSupprimerPersonne ()
 	QMessageBox::information(this, "ERREUR", message);
       }
     }
+}
+
+
+
+void PersonneGUI::selectionLigneTable(){
+	int ligne = ui.tableWidget->currentRow();
+	QTableWidgetItem *tNom = ui.tableWidget->item(ligne, 0);
+	QTableWidgetItem *tPrenom = ui.tableWidget->item(ligne, 1);
+	
+        for (size_t i = 0; i < monAnnuaire.reqNbMembres (); ++i) {
+        const hockey::Personne& personne = monAnnuaire.reqPersonne(i);
+        if (personne.reqNom() == (*tNom).text().toStdString() && personne.reqPrenom() == (*tPrenom).text().toStdString())
+          {
+            ui.affichage->setText(personne.reqPersonneFormate().c_str());
+          }
+	}
 }
