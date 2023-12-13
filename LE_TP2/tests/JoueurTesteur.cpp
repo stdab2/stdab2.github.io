@@ -71,7 +71,7 @@ TEST_F (JoueurValide, reqPersonneFormate)
   os << "Date de naissance" << "       : " << util::Date(15, 05, 2007).reqDateFormatee () << std::endl;
   os << "Telephone" << "               : " << "581-857-2438" << std::endl;
   os << "Position" << "                : " << "centre" << std::endl;
-  os << "---------------------";
+  os << "---------------------" << std::endl;
   
   ASSERT_EQ(os.str(), f_pVal.reqPersonneFormate ());
 }
