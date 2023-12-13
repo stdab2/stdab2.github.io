@@ -177,9 +177,11 @@ void PersonneGUI::dialogSupprimerPersonne ()
              {
                QTableWidgetItem* itemNom = ui.tableWidget->item(row, 0);
                QTableWidgetItem* itemPrenom = ui.tableWidget->item(row, 1);
-               if (itemNom && itemPrenom &&
+               QTableWidgetItem* itemDate = ui.tableWidget->item(row, 2);
+               if (itemNom && itemPrenom && itemDate &&
                itemNom->text().toStdString() == nouvellePersonne.reqNom () &&
-               itemPrenom->text().toStdString() == nouvellePersonne.reqPrenom ()) 
+               itemPrenom->text().toStdString() == nouvellePersonne.reqPrenom () &&
+               itemDate->text().toStdString() == nouvellePersonne.reqDateNaissance ().reqDateFormatee ()) 
                {
                  ui.tableWidget->removeRow(row);
                  break;
@@ -202,10 +204,12 @@ void PersonneGUI::selectionLigneTable(){
 	int ligne = ui.tableWidget->currentRow();
 	QTableWidgetItem *tNom = ui.tableWidget->item(ligne, 0);
 	QTableWidgetItem *tPrenom = ui.tableWidget->item(ligne, 1);
+        QTableWidgetItem *tDate = ui.tableWidget->item(ligne, 2);
 	
         for (size_t i = 0; i < monAnnuaire.reqNbMembres (); ++i) {
         const hockey::Personne& personne = monAnnuaire.reqPersonne(i);
-        if (personne.reqNom() == (*tNom).text().toStdString() && personne.reqPrenom() == (*tPrenom).text().toStdString())
+        if (personne.reqNom() == (*tNom).text().toStdString() && personne.reqPrenom() == (*tPrenom).text().toStdString() && 
+            personne.reqDateNaissance ().reqDateFormatee () == (*tDate).text().toStdString())
           {
             ui.affichage->setText(personne.reqPersonneFormate().c_str());
           }

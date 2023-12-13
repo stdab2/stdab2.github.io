@@ -35,7 +35,7 @@ public:
   void supprimerPersonne (const std::string& p_nom, const std::string& p_prenom, const
                           util::Date& p_dateDeNaissance);
   
-  hockey::Personne& reqPersonne(int index) const;
+  Personne& reqPersonne(int index) const;
 
   
   
